@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carcas", "Carcas\Carcas.csproj", "{E88AEF51-ECF2-4470-BB77-F6E46B68A8DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E88AEF51-ECF2-4470-BB77-F6E46B68A8DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88AEF51-ECF2-4470-BB77-F6E46B68A8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88AEF51-ECF2-4470-BB77-F6E46B68A8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88AEF51-ECF2-4470-BB77-F6E46B68A8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9173B11-F7BB-403E-BFB2-621E5AF42364}
+	EndGlobalSection
+EndGlobal

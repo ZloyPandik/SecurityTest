@@ -1,0 +1,31 @@
+﻿<Window x:Class="Carcas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Carcas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF3BA3B5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="261*"/>
+                <ColumnDefinition Width="539*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextWrapping="Wrap" Text="Тестирование безопасности" HorizontalAlignment="Left" FontSize="30" Grid.ColumnSpan="2" Margin="206,0,0,0" FontFamily="Segoe UI"/>
+            <Button Content="Меню" Name="BtnBack" HorizontalAlignment="Left" Margin="425,0,0,0" VerticalAlignment="Center" Width="89" Height="24" RenderTransformOrigin="-0.084,0.382" Click="BtnBack_Click" Grid.Column="1"/>
+        </Grid>
+        <Grid Background="#FF3BA3B5" Grid.Row="1" Margin="0,359,0,0" Grid.RowSpan="2"/>
+        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Row="1" ContentRendered="MainFrame_ContentRendered"/>
+
+
+    </Grid>
+</Window>
