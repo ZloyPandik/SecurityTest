@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SecurityTestModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="Id_Answer" />
+    </Key>
+    <Property Name="Id_Answer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Answer" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id_Category" />
+    </Key>
+    <Property Name="Id_Category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="Id_Questions" />
+    </Key>
+    <Property Name="Id_Questions" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Questions" Type="nchar" MaxLength="100" />
+    <Property Name="NumberResponses" Type="int" />
+  </EntityType>
+  <EntityType Name="QuestionsCategory">
+    <Key>
+      <PropertyRef Name="Id_QuestionsCategory" />
+    </Key>
+    <Property Name="Id_QuestionsCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Category(FK)" Type="int" />
+    <Property Name="Id-Questions(FK)" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id_Test" />
+    </Key>
+    <Property Name="Id_Test" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Questions(FK)" Type="int" />
+    <Property Name="Id_Answer(FK)" Type="int" />
+    <Property Name="Correct" Type="bit" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id_User" />
+    </Key>
+    <Property Name="Id_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="UserTest">
+    <Key>
+      <PropertyRef Name="Id_UserTest" />
+    </Key>
+    <Property Name="Id_UserTest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Test(FK)" Type="int" />
+    <Property Name="Id_User(FK)" Type="int" />
+  </EntityType>
+  <Association Name="FK_QuestionsCategory_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="QuestionsCategory" Type="Self.QuestionsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id_Category" />
+      </Principal>
+      <Dependent Role="QuestionsCategory">
+        <PropertyRef Name="Id_Category(FK)" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionsCategory_Questions">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+    <End Role="QuestionsCategory" Type="Self.QuestionsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="Id_Questions" />
+      </Principal>
+      <Dependent Role="QuestionsCategory">
+        <PropertyRef Name="Id-Questions(FK)" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Answer">
+    <End Role="Answer" Type="Self.Answer" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Answer">
+        <PropertyRef Name="Id_Answer" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="Id_Answer(FK)" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Questions">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="Id_Questions" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="Id_Questions(FK)" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTest_Test">
+    <End Role="Test" Type="Self.Test" Multiplicity="0..1" />
+    <End Role="UserTest" Type="Self.UserTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test">
+        <PropertyRef Name="Id_Test" />
+      </Principal>
+      <Dependent Role="UserTest">
+        <PropertyRef Name="Id_Test(FK)" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTest_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UserTest" Type="Self.UserTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="UserTest">
+        <PropertyRef Name="Id_User(FK)" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище SecurityTestModelContainer">
+    <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionsCategory" EntityType="Self.QuestionsCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTest" EntityType="Self.UserTest" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_QuestionsCategory_Category" Association="Self.FK_QuestionsCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="QuestionsCategory" EntitySet="QuestionsCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionsCategory_Questions" Association="Self.FK_QuestionsCategory_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="QuestionsCategory" EntitySet="QuestionsCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Answer" Association="Self.FK_Test_Answer">
+      <End Role="Answer" EntitySet="Answer" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Questions" Association="Self.FK_Test_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTest_Test" Association="Self.FK_UserTest_Test">
+      <End Role="Test" EntitySet="Test" />
+      <End Role="UserTest" EntitySet="UserTest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTest_User" Association="Self.FK_UserTest_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserTest" EntitySet="UserTest" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

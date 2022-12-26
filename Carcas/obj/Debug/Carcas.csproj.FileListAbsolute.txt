@@ -18,3 +18,10 @@ C:\Users\Pandik\Desktop\Carcas-master\Carcas\obj\Debug\Carcas.csproj.GenerateRes
 C:\Users\Pandik\Desktop\Carcas-master\Carcas\obj\Debug\Carcas.csproj.CoreCompileInputs.cache
 C:\Users\Pandik\Desktop\Carcas-master\Carcas\obj\Debug\Carcas.exe
 C:\Users\Pandik\Desktop\Carcas-master\Carcas\obj\Debug\Carcas.pdb
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\bin\Debug\EntityFramework.dll
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\bin\Debug\EntityFramework.xml
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\obj\Debug\Carcas_Content.g.cs
+C:\Users\Pandik\Desktop\Carcas-master\Carcas\obj\Debug\Carcas.csproj.CopyComplete

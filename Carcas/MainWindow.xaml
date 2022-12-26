@@ -6,25 +6,24 @@
         xmlns:local="clr-namespace:Carcas"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF3BA3B5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition/>
-            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid Background="#FF3BA3B5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="261*"/>
-                <ColumnDefinition Width="539*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock TextWrapping="Wrap" Text="Тестирование безопасности" HorizontalAlignment="Left" FontSize="30" Grid.ColumnSpan="2" Margin="206,0,0,0" FontFamily="Segoe UI"/>
-            <Button Content="Меню" Name="BtnBack" HorizontalAlignment="Left" Margin="425,0,0,0" VerticalAlignment="Center" Width="89" Height="24" RenderTransformOrigin="-0.084,0.382" Click="BtnBack_Click" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Тестирование безопасности"  FontSize="30" FontFamily="Segoe UI"/>
+            <Button HorizontalAlignment="Left" Content="Меню" Name="BtnBack" Margin="0,4,0,0" VerticalAlignment="Top" Width="89"  RenderTransformOrigin="-0.084,0.382" Click="BtnBack_Click" FontSize="20"/>
+            <Button HorizontalAlignment="Right" Content="Завершить тест" Name="BtnEnter" Margin="0,4,0,0" VerticalAlignment="Top" Width="151"  RenderTransformOrigin="-0.084,0.382" Click="BtnEnter_Click" FontSize="20"/>
         </Grid>
-        <Grid Background="#FF3BA3B5" Grid.Row="1" Margin="0,359,0,0" Grid.RowSpan="2"/>
-        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Row="1" ContentRendered="MainFrame_ContentRendered"/>
+        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" Margin="0,0,0,30"/>
+        
 
 
     </Grid>

@@ -30,14 +30,29 @@ namespace Carcas
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             if (MainFrame.CanGoBack)
+            {
                 BtnBack.Visibility = Visibility.Visible;
-            else 
+                BtnEnter.Visibility = Visibility.Visible;
+            }
+            else
+            {
                 BtnBack.Visibility = Visibility.Hidden;
+                BtnEnter.Visibility = Visibility.Hidden;
+            }
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.GoBack();
+            if (MessageBox.Show($"Вы точно хоите вернуться в меню? Все несохраненные данные будут утеряны", "Внимание!"
+               , MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Manager.MainFrame.GoBack();
+            }
+                
+        }
+        private void BtnEnter_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Данные Сохранены!");
         }
     }
 }

@@ -9,16 +9,37 @@
       Title="AddEditPage">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text=" Быстро, внезапно возникающее движение снега или льда вниз по крутым склонам гор, это:" VerticalAlignment="Top" Margin="0,29,0,0" FontSize="24" Width="699"/>
-        <RadioButton Content=" 1) Вьюга" HorizontalAlignment="Left" Margin="67,163,0,0"  VerticalAlignment="Top"/>
-        <RadioButton Content=" 2) Метель" HorizontalAlignment="Left" Margin="67,225,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content=" 3) Лавина" HorizontalAlignment="Left" Margin="67,289,0,0" VerticalAlignment="Top"/>
-        <Button Content="Следующий вопрос" HorizontalAlignment="Left" Margin="572,310,0,0" VerticalAlignment="Top"/>
-        <StackPanel>
-            <GroupBox Height="100" Header="Вопрос"/>
-        </StackPanel>
-
-
-
+        <TabControl>
+            <TabItem Header="Вопрос 1">
+                <Grid>
+                    <GroupBox Height="150" Header="Вопрос" FontSize="15" VerticalAlignment="Top">
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text=" Быстро, внезапно возникающее движение снега или льда вниз по крутым склонам гор, это:" VerticalAlignment="Top" Margin="0,29,0,0" FontSize="24" Width="699"/>
+                    </GroupBox>
+                    <RadioButton Content=" 1) вьюга" HorizontalAlignment="Left" Margin="67,163,0,0"  VerticalAlignment="Top" FontSize="15"/>
+                    <RadioButton Content=" 2) метель" HorizontalAlignment="Left" Margin="67,225,0,0" VerticalAlignment="Top" FontSize="15"/>
+                    <RadioButton Content=" 3) лавина" HorizontalAlignment="Left" Margin="67,289,0,0" VerticalAlignment="Top" FontSize="15"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вопрос 2">
+                <Grid>
+                    <GroupBox Height="150" Header="Вопрос" FontSize="15" VerticalAlignment="Top">
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text=" Если гроза застала вас во время отдыха у водоема, необходимо:" VerticalAlignment="Top" Margin="0,29,0,0" FontSize="24" Width="699"/>
+                    </GroupBox>
+                    <RadioButton Content=" 1) переждать грозу, не выходя из воды" HorizontalAlignment="Left" Margin="67,163,0,0"  VerticalAlignment="Top" FontSize="15"/>
+                    <RadioButton Content=" 2) облить себя водой, чтобы намокла одежда, и оставаться на берегу" HorizontalAlignment="Left" Margin="67,225,0,0" VerticalAlignment="Top" FontSize="15"/>
+                    <RadioButton Content=" 3) отплыть недалеко от берега и лечь на дно лодки" HorizontalAlignment="Left" Margin="67,289,0,0" VerticalAlignment="Top" FontSize="15"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вопрос 3">
+                <Grid>
+                    <GroupBox Height="150" Header="Вопрос" FontSize="15" VerticalAlignment="Top">
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text=" Как нужно продвигаться через сильно задымленное помещение?" VerticalAlignment="Top" Margin="0,29,0,0" FontSize="24" Width="699"/>
+                    </GroupBox>
+                    <RadioButton Content=" 1) в полный рост, но медленно" HorizontalAlignment="Left" Margin="67,163,0,0"  VerticalAlignment="Top" FontSize="15"/>
+                    <RadioButton Content=" 2) ползком или пригнувшись, закрывая нос и рот влажной тканью" HorizontalAlignment="Left" Margin="67,225,0,0" VerticalAlignment="Top" FontSize="15"/>
+                    <RadioButton Content=" 3) в полный рост и бегом" HorizontalAlignment="Left" Margin="67,289,0,0" VerticalAlignment="Top" FontSize="15"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>
